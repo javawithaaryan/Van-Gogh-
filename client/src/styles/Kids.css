@@ -1,0 +1,120 @@
+.kids-page {
+    background-color: #E0F7FA;
+    color: #333;
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+}
+
+.kids-hero {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    padding: 5rem 0;
+    text-align: center;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+}
+
+.kids-hero h1 {
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 3px 3px 0px #FF6B6B;
+    margin-bottom: 1rem;
+}
+
+.kids-hero p {
+    font-size: 1.8rem;
+    color: #1E3A8A;
+    font-weight: bold;
+}
+
+.kids-content {
+    padding: 4rem 2rem;
+}
+
+.kids-section {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.kids-section h2 {
+    font-size: 2.5rem;
+    color: #1E3A8A;
+    margin-bottom: 2rem;
+}
+
+.story-bubble-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.story-bubble {
+    background: #fff;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border: 5px solid #4DD0E1;
+    transition: transform 0.3s;
+}
+
+.story-bubble:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #FFD700;
+}
+
+.story-bubble .icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.story-bubble p {
+    font-weight: bold;
+    color: #555;
+}
+
+.activity-card {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.activity-step {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.step-number {
+    background: #FF6B6B;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.activity-image img {
+    max-width: 100%;
+    border-radius: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: rotate(-2deg);
+}

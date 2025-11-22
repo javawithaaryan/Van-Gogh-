@@ -1,0 +1,62 @@
+.legacy-header {
+    background-color: var(--color-surface);
+    padding: 4rem 0;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.legacy-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.legacy-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-bottom: 6rem;
+}
+
+.legacy-section.reverse {
+    direction: rtl;
+    /* Simple way to swap, but better to use grid areas or order */
+}
+
+.legacy-section.reverse .legacy-text {
+    direction: ltr;
+}
+
+.legacy-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.legacy-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+}
+
+.legacy-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border: 4px solid rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.legacy-image img:hover {
+    transform: scale(1.02);
+    border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+
+    .legacy-section,
+    .legacy-section.reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+}

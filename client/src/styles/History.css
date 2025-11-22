@@ -1,0 +1,92 @@
+.history-page {
+    background-color: var(--color-background);
+}
+
+.history-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://localhost:3000/assets/images/van4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.history-hero h1 {
+    font-size: 5rem;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+
+.history-hero p {
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: 300;
+    letter-spacing: 5px;
+}
+
+.history-content {
+    max-width: 1000px;
+    padding-bottom: 4rem;
+}
+
+.history-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.history-section.right {
+    flex-direction: row-reverse;
+}
+
+.text-content {
+    flex: 1;
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+}
+
+.text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.image-content {
+    flex: 1;
+}
+
+.image-content img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s ease;
+}
+
+.image-content img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+@media (max-width: 768px) {
+    .history-hero h1 {
+        font-size: 3rem;
+    }
+
+    .history-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .history-section.right {
+        flex-direction: column;
+    }
+}
