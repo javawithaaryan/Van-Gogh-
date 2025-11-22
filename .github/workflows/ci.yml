@@ -22,7 +22,24 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+
+    - name: Cache root dependencies
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-root-${{ hashFiles('package-lock.json') }}
+
+    - name: Cache client dependencies
+      uses: actions/cache@v3
+      with:
+        path: client/node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-client-${{ hashFiles('client/package-lock.json') }}
+
+    - name: Cache server dependencies
+      uses: actions/cache@v3
+      with:
+        path: server/node_modules
+        key: ${{ runner.os }}-node-${{ matrix.node-version }}-server-${{ hashFiles('server/package-lock.json') }}
 
     - name: Install root dependencies
       run: npm ci
