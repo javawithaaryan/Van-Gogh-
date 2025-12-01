@@ -25,6 +25,15 @@ app.use('/api', apiRouter);
 const pagesRouter = require('./routes/pages');
 app.use('/', pagesRouter);
 
+// Global Error Handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render('layout', {
+    title: 'Error',
+    body: '<div class="container" style="text-align: center; padding: 50px;"><h1>500 - Server Error</h1><p>Something went wrong. Please try again later.</p></div>'
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
