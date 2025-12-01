@@ -120,4 +120,31 @@ router.get('/history', (req, res) => {
     });
 });
 
+// Stories Page
+router.get('/stories', (req, res) => {
+    const artworks = readData('artworks.json');
+    const stories = artworks.filter(item => item.story);
+    res.render('stories', {
+        title: 'Stories',
+        styles: ['Stories.css'],
+        stories
+    });
+});
+
+// Kids Page
+router.get('/kids', (req, res) => {
+    res.render('kids', {
+        title: 'Kids',
+        styles: ['Kids.css']
+    });
+});
+
+// Legacy Page
+router.get('/legacy', (req, res) => {
+    res.render('legacy', {
+        title: 'Legacy',
+        styles: ['Legacy.css']
+    });
+});
+
 module.exports = router;

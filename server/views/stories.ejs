@@ -1,0 +1,31 @@
+<%- include('partials/head', { title: title, currentPath: '/stories' }) %>
+
+    <div class="stories-page">
+        <div class="stories-header">
+            <div class="container">
+                <h1>Van Gogh Stories</h1>
+                <p>Dive deeper into the tales behind the masterpieces.</p>
+            </div>
+        </div>
+
+        <div class="container stories-grid">
+            <% stories.forEach((item, index)=> { %>
+                <div class="story-card">
+                    <div class="story-image">
+                        <img src="/assets/images/<%= item.image %>" alt="<%= item.title %>">
+                    </div>
+                    <div class="story-content">
+                        <h3>
+                            <%= item.title %>
+                        </h3>
+                        <p class="story-excerpt">
+                            <%= item.story.substring(0, 120) %>...
+                        </p>
+                        <a href="/artwork/<%= item.id %>" class="read-more">Read Full Story &rarr;</a>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <%- include('partials/foot') %>
