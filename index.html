@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Gogh Chronicle - Project Overview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            margin: 0;
+            color: #f1c40f;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: #d35400;
+        }
+
+        .architecture-diagram {
+            background: #eef;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Van Gogh Chronicle</h1>
+        <p>Full Stack Server-Side Rendered Application</p>
+    </header>
+
+    <div class="card">
+        <h2>🚀 How to Run the Application</h2>
+        <p>This project is built with <strong>Node.js</strong>, <strong>Express</strong>, and <strong>EJS</strong>. It
+            does not use a separate frontend build process.</p>
+        <ol>
+            <li>Open a terminal in the <code>server</code> directory (or root).</li>
+            <li>Run the command: <code>npm start</code></li>
+            <li>Open your browser and visit:</li>
+        </ol>
+        <div style="text-align: center;">
+            <a href="http://localhost:3000" class="btn" target="_blank">Open Application (http://localhost:3000)</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🏗️ Project Architecture</h2>
+        <p>The application has been migrated from a React SPA to a fully backend-rendered architecture for better
+            performance and SEO.</p>
+
+        <div class="architecture-diagram">
+            Browser (Client) <br>
+            ⬇️ ⬆️ <br>
+            Node.js + Express Server <br>
+            (Router & Controller) <br>
+            ⬇️ ⬆️ <br>
+            EJS Templates + JSON Data
+        </div>
+
+        <h3>Key Directories:</h3>
+        <ul>
+            <li><code>server/views/</code>: Contains the HTML/EJS templates (Frontend Code).</li>
+            <li><code>server/public/</code>: Contains static assets (CSS, Images, JS).</li>
+            <li><code>server/routes/</code>: Handles page routing and data logic.</li>
+            <li><code>server/data/</code>: JSON files storing the application content.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🎨 Frontend Code Overview</h2>
+        <p>The frontend logic is now embedded in the EJS templates. For example, the <strong>Gallery</strong> page
+            logic:</p>
+        <pre style="background: #333; color: #fff; padding: 10px; border-radius: 5px; overflow-x: auto;">
+&lt;% artworks.forEach(artwork => { %&gt;
+  &lt;div class="gallery-item"&gt;
+    &lt;img src="/assets/images/&lt;%= artwork.image %&gt;"&gt;
+    &lt;h3&gt;&lt;%= artwork.title %&gt;&lt;/h3&gt;
+  &lt;/div&gt;
+&lt;% }); %&gt;</pre>
+        <p>This runs on the server and sends finished HTML to the browser.</p>
+    </div>
+
+</body>
+
+</html>
