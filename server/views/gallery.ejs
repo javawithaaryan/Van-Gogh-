@@ -1,0 +1,71 @@
+<%- include('partials/head', { title: title, currentPath: '/gallery' }) %>
+
+    <div class="gallery-page">
+        <div class="gallery-header">
+            <div class="container">
+                <h1>The Collection</h1>
+                <p>Explore 5000+ works by Vincent van Gogh.</p>
+
+                <!-- Filter Form -->
+                <form action="/gallery" method="GET" class="filter-form">
+                    <div class="category-tabs">
+                        <% const categories=['All', 'Paintings' , 'Drawings' ]; %>
+                            <% categories.forEach(cat=> { %>
+                                <button type="submit" name="category" value="<%= cat %>"
+                                    class="tab-btn <%= category === cat ? 'active' : '' %>">
+                                    <%= cat %>
+                                </button>
+                                <% }); %>
+                    </div>
+
+                    <div class="search-container">
+                        <input type="text" name="search" placeholder="Search the collection..." value="<%= search %>"
+                            class="search-input">
+                        <button type="submit" class="search-btn">🔍</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container gallery-container">
+            <div class="gallery-grid">
+                <% if (artworks.length> 0) { %>
+                    <% artworks.forEach(artwork=> { %>
+                        <a href="/artwork/<%= artwork.id %>" class="gallery-link">
+                            <div class="gallery-item">
+                                <img src="/assets/images/<%= artwork.image %>" alt="<%= artwork.title || 'Artwork' %>"
+                                    loading="lazy">
+                                <div class="overlay">
+                                    <h3>
+                                        <%= artwork.title || 'Untitled' %>
+                                    </h3>
+                                    <p>
+                                        <%= artwork.category || 'Painting' %>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <% }); %>
+                            <% } else { %>
+                                <p class="no-results">No artworks found.</p>
+                                <% } %>
+            </div>
+
+            <!-- Pagination -->
+            <% if (totalPages> 1) { %>
+                <div class="pagination">
+                    <% if (currentPage> 1) { %>
+                        <a href="/gallery?page=<%= currentPage - 1 %>&category=<%= category %>&search=<%= search %>"
+                            class="btn btn-secondary">Previous</a>
+                        <% } %>
+                            <span class="page-info">Page <%= currentPage %> of <%= totalPages %></span>
+                            <% if (currentPage < totalPages) { %>
+                                <a href="/gallery?page=<%= currentPage + 1 %>&category=<%= category %>&search=<%= search %>"
+                                    class="btn btn-secondary">Next</a>
+                                <% } %>
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+    <%- include('partials/foot') %>

@@ -1,0 +1,56 @@
+<nav class="navbar">
+    <div class="container navbar-content">
+        <a href="/" class="navbar-brand">
+            <span class="brand-icon">🌻</span>
+            <div class="brand-text">
+                <h1>Van Gogh</h1>
+                <span>Chronicle</span>
+            </div>
+        </a>
+
+        <div class="navbar-links" id="navbarLinks">
+            <% const links=[ { name: 'Home' , path: '/' }, { name: 'Gallery' , path: '/gallery' }, { name: 'Stories' ,
+                path: '/stories' }, { name: 'Kids' , path: '/kids' }, { name: 'Timeline' , path: '/timeline' }, {
+                name: 'Letters' , path: '/letters' }, { name: 'History' , path: '/history' }, { name: 'Legacy' ,
+                path: '/legacy' }, ]; %>
+                <% links.forEach(function(link) { %>
+                    <a href="<%= link.path %>" class="nav-link <%= currentPath === link.path ? 'active' : '' %>">
+                        <%= link.name %>
+                            <% if (currentPath===link.path) { %>
+                                <div class="underline"></div>
+                                <% } %>
+                    </a>
+                    <% }); %>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+    <div class="progress-bar" id="progressBar"></div>
+</nav>
+
+<script>
+    // Simple mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navbarLinks = document.getElementById('navbarLinks');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navbarLinks.classList.toggle('open');
+        });
+    }
+
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.getElementById('progressBar');
+        if (progressBar) {
+            progressBar.style.width = scrolled + "%";
+        }
+    });
+</script>

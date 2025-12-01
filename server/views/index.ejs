@@ -1,0 +1,75 @@
+<%- include('partials/head', { title: 'Home' , currentPath: '/' }) %>
+
+    <div class="home">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="/assets/videos/video1.mp4" type="video/mp4" />
+                <img src="/assets/images/night.jpg" alt="Starry Night" />
+            </video>
+
+            <div class="hero-content container">
+                <h1>"I dream my painting and I paint my dream."</h1>
+                <p>Immerse yourself in the vibrant world of Vincent van Gogh.</p>
+                <div class="hero-buttons">
+                    <a href="/gallery" class="btn btn-primary">Explore Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Masterpieces Section -->
+        <section class="section masterpieces">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Masterpieces</h2>
+                    <p>Iconic works that defined an era.</p>
+                </div>
+
+                <div class="masterpiece-grid">
+                    <div class="masterpiece-card">
+                        <img src="/assets/images/night.jpg" alt="Starry Night" />
+                        <div class="card-overlay">
+                            <h3>The Starry Night</h3>
+                        </div>
+                    </div>
+                    <div class="masterpiece-card">
+                        <img src="/assets/images/3.jpg" alt="Sunflowers" />
+                        <div class="card-overlay">
+                            <h3>Sunflowers</h3>
+                        </div>
+                    </div>
+                    <div class="masterpiece-card">
+                        <img src="/assets/images/4.jpg" alt="The Bedroom" />
+                        <div class="card-overlay">
+                            <h3>The Bedroom</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="center-btn">
+                    <a href="/gallery" class="btn btn-secondary">View All Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Man Section -->
+        <section class="section the-man">
+            <div class="container">
+                <div class="split-layout">
+                    <div class="text-side">
+                        <h2>The Man Behind the Canvas</h2>
+                        <p>
+                            Vincent van Gogh (1853–1890) created about 2,100 artworks in just over a decade.
+                            His life was marked by passion, struggle, and an unyielding dedication to his craft.
+                        </p>
+                        <a href="/history" class="btn btn-primary">Read His Story</a>
+                    </div>
+                    <div class="image-side">
+                        <img src="/assets/images/van4.jpg" alt="Vincent" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <%- include('partials/foot') %>

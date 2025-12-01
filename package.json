@@ -2,17 +2,17 @@
     "name": "van-gogh-chronicle",
     "version": "1.0.0",
     "description": "Van Gogh Chronicle - Full Stack Application",
-    "main": "index.js",
+    "main": "server/index.js",
     "scripts": {
-        "install-all": "npm install && cd client && npm install && cd ../server && npm install",
-        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "install-all": "cd server && npm install",
+        "start": "cd server && npm start",
         "server": "cd server && npm start",
-        "client": "cd client && npm run dev",
-        "build": "cd client && npm install && npm run build"
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
         "van-gogh",
-        "react",
+        "express",
+        "ejs",
         "node"
     ],
     "author": "Aryan Rathore",

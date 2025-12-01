@@ -1,0 +1,30 @@
+<%- include('partials/head', { title: title, currentPath: '/history' }) %>
+
+    <div class="history-page">
+        <div class="history-hero">
+            <div class="hero-content">
+                <h1>Vincent's Journey</h1>
+                <p>1853 — 1890</p>
+            </div>
+        </div>
+
+        <div class="container history-content">
+            <% sections.forEach((section, index)=> { %>
+                <section class="history-section <%= section.align %>">
+                    <div class="text-content">
+                        <h2>
+                            <%= section.title %>
+                        </h2>
+                        <p>
+                            <%= section.content %>
+                        </p>
+                    </div>
+                    <div class="image-content">
+                        <img src="/assets/images/<%= section.image %>" alt="<%= section.title %>">
+                    </div>
+                </section>
+                <% }); %>
+        </div>
+    </div>
+
+    <%- include('partials/foot') %>

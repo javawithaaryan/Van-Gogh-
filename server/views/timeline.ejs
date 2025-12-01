@@ -1,0 +1,38 @@
+<%- include('partials/head', { title: title, currentPath: '/timeline' }) %>
+
+    <div class="timeline-page">
+        <div class="timeline-header">
+            <div class="container">
+                <h1>Life Timeline</h1>
+                <p>A journey through the life of Vincent van Gogh (1853–1890).</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="timeline">
+                <% events.forEach((event, index)=> { %>
+                    <div class="timeline-item <%= index % 2 === 0 ? 'left' : 'right' %>">
+                        <div class="timeline-content">
+                            <div class="date">
+                                <%= event.year %>
+                            </div>
+                            <% if (event.image) { %>
+                                <div class="timeline-image">
+                                    <img src="/assets/images/<%= event.image %>" alt="<%= event.title %>">
+                                </div>
+                                <% } %>
+                                    <h3>
+                                        <%= event.title || event.event %>
+                                    </h3>
+                                    <p>
+                                        <%= event.description %>
+                                    </p>
+                                    <span class="location-tag">📍 <%= event.location %></span>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/foot') %>

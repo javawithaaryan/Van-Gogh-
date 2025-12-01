@@ -1,0 +1,37 @@
+<%- include('partials/head', { title: title, currentPath: '/letters' }) %>
+
+    <div class="letters-page">
+        <div class="letters-header">
+            <div class="container">
+                <h1>The Letters</h1>
+                <p>A window into Vincent's soul.</p>
+            </div>
+        </div>
+
+        <div class="container letters-grid">
+            <% letters.forEach((letter, index)=> { %>
+                <div class="letter-card">
+                    <div class="letter-image">
+                        <img src="/assets/images/<%= letter.image %>" alt="Letter Facsimile">
+                        <div class="letter-date">
+                            <%= letter.year %>
+                        </div>
+                    </div>
+                    <div class="letter-content">
+                        <h3>
+                            <%= letter.title %>
+                        </h3>
+                        <p class="recipient">To: <%= letter.recipient %>
+                        </p>
+                        <p class="excerpt">"<%= letter.excerpt %>"</p>
+                        <div class="letter-footer">
+                            <span class="location">📍 <%= letter.location %></span>
+                            <button class="read-btn">Read Full Letter</button>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </div>
+
+    <%- include('partials/foot') %>
